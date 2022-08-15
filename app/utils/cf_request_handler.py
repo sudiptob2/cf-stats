@@ -1,7 +1,7 @@
 import requests
 
 from config.config import settings
-from src.constant import Constant
+from app.constant import Constant
 
 
 class CFRequestHandler:
