@@ -51,5 +51,3 @@ if __name__ == '__main__':
     CFResponseParser.parse()
     test_user = User()
     print(test_user)
-    print(test_user.rating_color)
-    print(test_user.max_rating_color)
