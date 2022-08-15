@@ -37,7 +37,7 @@ class CFResponseParser:
             freq[sb['verdict']] += 1
 
         user.accepted = freq['OK']
-        user.wrong_ans = freq['TIME_LIMIT_EXCEEDED']
+        user.wrong_ans = freq['WRONG_ANSWER']
         user.tle = freq['TIME_LIMIT_EXCEEDED']
 
     @classmethod
