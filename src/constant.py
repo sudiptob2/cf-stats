@@ -1,4 +1,4 @@
-class Constant(object):
+class Constant:
     """Class for organizing constants."""
 
     # website names
