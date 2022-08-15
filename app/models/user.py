@@ -18,6 +18,35 @@ class User:
             cls.instance = super(User, cls).__new__(cls)
         return cls.instance
 
+    @classmethod
+    def __get_color(cls, rating):
+        """Returns the HEX of appropriate color according to the rating."""
+        if rating <= 1199:
+            col = '#cec8c1'
+        elif 1199 < rating <= 1399:
+            col = '#43A217'
+        elif 1399 < rating <= 1599:
+            col = "#22C4AE"
+        elif 1599 < rating <= 1899:
+            col = "#1427B2"
+        elif 1899 < rating <= 2099:
+            col = "#700CB0"
+        elif 2099 < rating <= 2299:
+            col = "#F9A908"
+        elif 2299 < rating <= 2399:
+            col = "#FBB948"
+        else:
+            col = "#FF0000"
+        return col
+
+    @property
+    def rating_color(self):
+        return self.__get_color(self.rating)
+
+    @property
+    def max_rating_color(self):
+        return self.__get_color(self.max_rating)
+
     def __str__(self):
         """Returns the string rep of the class."""
 
