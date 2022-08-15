@@ -17,9 +17,9 @@ class CFRequestHandler:
         url = Constant.USER_INFO.format(settings.cf_handle)
         try:
             response = requests.get(url)
-            cls.user_info = response.json().get('result')[0]
-        except requests.exceptions:
-            return SystemExit('Could not connect to the codeforces API')
+        except Exception:
+            raise SystemExit('Could not connect to the codeforces API')
+        cls.user_info = response.json().get('result')[0]
 
     @classmethod
     def __get_user_sub(cls):
@@ -27,9 +27,10 @@ class CFRequestHandler:
         url = Constant.USER_STATUS.format(settings.cf_handle)
         try:
             response = requests.get(url)
-            cls.user_submission = response.json().get('result')
-        except requests.exceptions:
-            return SystemExit('Could not connect to the codeforces API')
+
+        except Exception:
+            raise SystemExit('Could not connect to the codeforces API')
+        cls.user_submission = response.json().get('result')
 
     @classmethod
     def __get_rating_changes(cls):
@@ -37,9 +38,9 @@ class CFRequestHandler:
         url = Constant.USER_RATING.format(settings.cf_handle)
         try:
             response = requests.get(url)
-            cls.rating_changes = response.json().get('result')
-        except requests.exceptions:
-            return SystemExit('Could not connect to the codeforces API')
+        except Exception:
+            raise SystemExit('Could not connect to the codeforces API')
+        cls.rating_changes = response.json().get('result')
 
     @staticmethod
     def make_request():
@@ -47,11 +48,3 @@ class CFRequestHandler:
         CFRequestHandler.__get_user_info()
         CFRequestHandler.__get_user_sub()
         CFRequestHandler.__get_rating_changes()
-
-
-if __name__ == '__main__':
-    cf = CFRequestHandler
-    cf.make_request()
-    print(cf.user_info)
-    print(cf.user_submission)
-    print(cf.rating_changes)
