@@ -5,7 +5,7 @@ from app.constant import Constant
 
 
 class CFRequestHandler:
-    """Provides utils for requesting codeforces API."""
+    """Provides services for requesting codeforces API."""
 
     user_info: dict = None
     user_submission: dict = None
