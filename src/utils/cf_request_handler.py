@@ -27,7 +27,6 @@ class CFRequestHandler:
         url = Constant.USER_STATUS.format(settings.cf_handle)
         try:
             response = requests.get(url)
-
         except Exception:
             raise SystemExit('Could not connect to the codeforces API')
         cls.user_submission = response.json().get('result')
