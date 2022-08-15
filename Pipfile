@@ -8,6 +8,7 @@ pydantic = "*"
 python-dotenv = "*"
 requests = "*"
 pytest = "*"
+pybadges = "*"
 
 [dev-packages]
 
