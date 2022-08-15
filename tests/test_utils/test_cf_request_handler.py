@@ -1,7 +1,7 @@
 import pytest
 
 from app.constant import Constant
-from app.utils.cf_request_handler import CFRequestHandler
+from app.services.cf_request_handler import CFRequestHandler
 
 
 class TestCFReqHandler:

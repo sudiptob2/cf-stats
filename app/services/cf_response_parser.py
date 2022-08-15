@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 from app.models.user import User
-from app.utils.cf_request_handler import CFRequestHandler
+from app.services.cf_request_handler import CFRequestHandler
 
 
 class CFResponseParser:
