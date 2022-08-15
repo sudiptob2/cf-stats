@@ -1,5 +1,5 @@
-from src.models.user import User
-from src.utils.cf_response_parser import CFResponseParser
+from app.models.user import User
+from app.utils.cf_response_parser import CFResponseParser
 
 
 class TestCFParser:
