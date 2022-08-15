@@ -23,9 +23,9 @@ class CFResponseParser:
         user.organization = user_info.get('organization', '')
         user.rating = user_info.get('rating', 0)
         user.rank = user_info.get('rank', 'newbie')
-        user.max_rating = user_info.get('rating', 0)
+        user.max_rating = user_info.get('maxRating', 0)
         user.max_rank = user_info.get('maxRank', 'newbie')
-        user.contributions = user_info.get('maxRating', 0)
+        user.contributions = user_info.get('contributions', 0)
 
     @classmethod
     def __parse_user_submission(cls, user_submission):
@@ -51,3 +51,5 @@ if __name__ == '__main__':
     CFResponseParser.parse()
     test_user = User()
     print(test_user)
+    print(test_user.rating_color)
+    print(test_user.max_rating_color)
