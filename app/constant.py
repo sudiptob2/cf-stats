@@ -14,9 +14,12 @@ class Constant:
     USER_RATING = 'https://codeforces.com/api/user.rating?handle={0}'
 
     # SVG types
-    RATING_BADGE = 'rating_badge'
-    MAX_RATING_BADGE = 'rating_badge'
-    STAT = 'rating_badge'
+    BADGE = 'badge'
+    STAT = 'stat'
+
+    # Badge type
+    RATING = 'rating'
+    MAX_RATING = 'max_rating'
 
     # Output folder location
     OUTPUT_FOLDER = f'{settings.base_dir}/output'
