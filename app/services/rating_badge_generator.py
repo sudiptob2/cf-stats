@@ -15,8 +15,8 @@ class BadgeGenerator(IGenerator, FileHelper):
         badge = pybadges.badge(
             left_text=Constant.CODEFORCES,
             logo=Constant.LOGO,
-            right_text=str(user.rating),
-            right_color=str(user.rating_color)
+            right_text=str(getattr(user, config.badge_type)),
+            right_color=str(user.rating_color) if config.badge_type == 'rating' else str(user.max_rating_color)
         )
         file_context = FileContext(badge, f"{Constant.OUTPUT_FOLDER}/{config.badge_type}.svg")
         cls.save_svg(file_context)
