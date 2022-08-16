@@ -4,6 +4,7 @@ from collections import namedtuple
 from app.constant import Constant
 
 FileContext = namedtuple('FileContext', ['svg', 'filename'])
+Config = namedtuple('Config', ['badge_type'])
 
 
 class FileHelper:
