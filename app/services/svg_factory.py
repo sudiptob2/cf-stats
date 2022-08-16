@@ -1,11 +1,11 @@
 from app.constant import Constant
-from app.services.rating_badge_generator import RatingBadgeGenerator
+from app.services.rating_badge_generator import BadgeGenerator
 
 
 def make_svg_generator(generator_type: str):
     """Returns the appropriate generator class."""
     generators = {
-        Constant.RATING_BADGE: RatingBadgeGenerator,
+        Constant.BADGE: BadgeGenerator,
     }
     return generators[generator_type]
 
