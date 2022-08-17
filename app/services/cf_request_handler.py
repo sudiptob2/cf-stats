@@ -12,7 +12,7 @@ class CFRequestHandler:
     rating_changes: dict = None
 
     @classmethod
-    def __get_user_info(cls):
+    def _get_user_info(cls):
         """Gets data from codeforces user.info api."""
         url = Constant.USER_INFO.format(settings.cf_handle)
         try:
@@ -22,7 +22,7 @@ class CFRequestHandler:
         cls.user_info = response.json().get('result')[0]
 
     @classmethod
-    def __get_user_sub(cls):
+    def _get_user_sub(cls):
         """Gets data from codeforces user.status api."""
         url = Constant.USER_STATUS.format(settings.cf_handle)
         try:
@@ -32,7 +32,7 @@ class CFRequestHandler:
         cls.user_submission = response.json().get('result')
 
     @classmethod
-    def __get_rating_changes(cls):
+    def _get_rating_changes(cls):
         """Gets all rating changes from codeforces api."""
         url = Constant.USER_RATING.format(settings.cf_handle)
         try:
@@ -44,6 +44,6 @@ class CFRequestHandler:
     @staticmethod
     def make_request():
         """Makes all the necessary requests to cf API."""
-        CFRequestHandler.__get_user_info()
-        CFRequestHandler.__get_user_sub()
-        CFRequestHandler.__get_rating_changes()
+        CFRequestHandler._get_user_info()
+        CFRequestHandler._get_user_sub()
+        CFRequestHandler._get_rating_changes()

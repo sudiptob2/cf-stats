@@ -11,12 +11,12 @@ class CFResponseParser:
     def parse():
         """Parse and make user object."""
         CFRequestHandler.make_request()
-        CFResponseParser.__parse_user_info(CFRequestHandler.user_info)
-        CFResponseParser.__parse_user_submission(CFRequestHandler.user_submission)
-        CFResponseParser.__parse_rating_changes(CFRequestHandler.rating_changes)
+        CFResponseParser._parse_user_info(CFRequestHandler.user_info)
+        CFResponseParser._parse_user_submission(CFRequestHandler.user_submission)
+        CFResponseParser._parse_rating_changes(CFRequestHandler.rating_changes)
 
     @classmethod
-    def __parse_user_info(cls, user_info):
+    def _parse_user_info(cls, user_info):
         """Parse and sets user's basic profile."""
         user = User()
         user.name = user_info.get('firstName', '') + ' ' + user_info.get('lastName', '')
@@ -28,7 +28,7 @@ class CFResponseParser:
         user.contributions = user_info.get('contributions', 0)
 
     @classmethod
-    def __parse_user_submission(cls, user_submission):
+    def _parse_user_submission(cls, user_submission):
         """Parse and save submission related details."""
         user = User()
         user.submissions = len(user_submission)
@@ -41,7 +41,7 @@ class CFResponseParser:
         user.tle = freq['TIME_LIMIT_EXCEEDED']
 
     @classmethod
-    def __parse_rating_changes(cls, rating_changes):
+    def _parse_rating_changes(cls, rating_changes):
         """Sets total number of contests participated by the user."""
         user = User()
         user.contests = len(rating_changes)
