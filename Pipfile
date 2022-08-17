@@ -9,6 +9,8 @@ python-dotenv = "*"
 requests = "*"
 pytest = "*"
 pybadges = "*"
+pytest-mock = "*"
+mock = "*"
 
 [dev-packages]
 
