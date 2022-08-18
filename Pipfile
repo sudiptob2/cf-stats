@@ -11,6 +11,7 @@ pytest = "*"
 pybadges = "*"
 pytest-mock = "*"
 mock = "*"
+python-dateutil = "*"
 
 [dev-packages]
 
