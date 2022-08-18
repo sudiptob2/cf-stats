@@ -1,22 +1,23 @@
-import pytest
-
-from app.constant import Constant
+from app.models.user import User
 from app.services.cf_request_handler import CFRequestHandler
+from app.services.cf_response_parser import CFResponseParser
 
 
-class TestCFReqHandler:
-    """Class for testing codeforces request handlers."""
+class TestCFReqParser:
+    """Class for testing codeforces request parser."""
 
-    def test_make_request(self):
-        """Tests CFRequestHandler.make_request."""
-        CFRequestHandler.make_request()
+    def test_parse_response(self, mocker, user_info, user_submission, rating_changes):
+        """Tests CFResponseParser.parse_response."""
+        user = User()
 
-        assert CFRequestHandler.user_info is not None
-        assert CFRequestHandler.user_submission is not None
-        assert CFRequestHandler.user_submission is not None
+        def fake_make_request():
+            CFRequestHandler.user_info = user_info
+            CFRequestHandler.user_submission = user_submission
+            CFRequestHandler.rating_changes = rating_changes
 
-    def test_make_request_invalid(self):
-        """Tests CFRequestHandler.make_request."""
-        with pytest.raises(SystemExit):
-            Constant.USER_INFO = 'https://somedsdfdf.com'
-            CFRequestHandler.make_request()
+        mocker.patch.object(CFRequestHandler, 'make_request', fake_make_request)
+        CFResponseParser.parse()
+
+        assert user.rating == user_info.get('rating')
+        assert user.submissions == len(user_submission)
+        assert user.contests == len(rating_changes)

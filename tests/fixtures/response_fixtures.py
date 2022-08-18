@@ -3,6 +3,7 @@ import pytest
 
 @pytest.fixture
 def user_info():
+    """Returns sample codeforces user.info API response."""
     return {
         "lastName": "Khodyrev",
         "lastOnlineTimeSeconds": 1655498450,
@@ -23,6 +24,7 @@ def user_info():
 
 @pytest.fixture
 def user_submission():
+    """Sample response of codeforces submission API."""
     return [
         {
             "id": 157298399,
@@ -65,6 +67,7 @@ def user_submission():
 
 @pytest.fixture
 def rating_changes():
+    """Sample response of user rating API."""
     return [
         {
             "contestId": 1,
