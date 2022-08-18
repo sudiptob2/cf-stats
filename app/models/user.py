@@ -1,3 +1,8 @@
+from datetime import datetime
+
+import dateutil.relativedelta
+
+
 class User:
     """Singleton user model."""
     name: str = ''
@@ -12,6 +17,7 @@ class User:
     wrong_ans: int = 0
     tle: int = 0
     contributions: int = 0
+    registration_unix_time: int = 0
 
     def __new__(cls):
         if not hasattr(cls, 'instance'):
@@ -47,10 +53,17 @@ class User:
     def max_rating_color(self):
         return self.__get_color(self.max_rating)
 
+    @property
+    def member_since(self):
+        """Returns the number of years at codeforces."""
+        joined_at = datetime.fromtimestamp(self.registration_unix_time)
+        rd = dateutil.relativedelta.relativedelta(datetime.now(), joined_at)
+        return int(rd.years)
+
     def __str__(self):
         """Returns the string rep of the class."""
 
         return f"Name: {self.name}\nOrg: {self.organization}\nRating: {self.rating}\n" + \
                f"Rank: {self.rank}\nMax Rating: {self.max_rating}\nMax Rank: {self.max_rank}\n" + \
                f"Contests: {self.contests}\nSubmissions: {self.submissions}\nAC: {self.accepted}\n" + \
-               f"WA: {self.wrong_ans}\nTLE: {self.tle}\nContribution: {self.contributions}\n"
+               f"WA: {self.wrong_ans}\nTLE: {self.tle}\nContribution: {self.contributions}\nSince: {self.member_since}"
