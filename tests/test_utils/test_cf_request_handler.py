@@ -7,13 +7,25 @@ from app.services.cf_request_handler import CFRequestHandler
 class TestCFReqHandler:
     """Class for testing codeforces request handlers."""
 
-    def test_make_request(self):
+    def test_make_request(self, mocker, user_info, user_submission, rating_changes):
         """Tests CFRequestHandler.make_request."""
-        CFRequestHandler.make_request()
 
-        assert CFRequestHandler.user_info is not None
-        assert CFRequestHandler.user_submission is not None
-        assert CFRequestHandler.user_submission is not None
+        def fake_get_user_info():
+            return user_info
+
+        def fake_get_user_sub():
+            return user_submission
+
+        def fake_rating_changes():
+            return rating_changes
+
+        mocker.patch.object(CFRequestHandler, '_get_user_info', fake_get_user_info)
+        mocker.patch.object(CFRequestHandler, '_get_user_sub', fake_get_user_sub)
+        mocker.patch.object(CFRequestHandler, '_get_rating_changes', fake_rating_changes)
+        CFRequestHandler.make_request()
+        assert type(CFRequestHandler.user_info) == dict
+        assert type(CFRequestHandler.user_submission) == list
+        assert type(CFRequestHandler.user_submission) == list
 
     def test_make_request_invalid(self):
         """Tests CFRequestHandler.make_request."""
