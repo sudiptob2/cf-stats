@@ -2,7 +2,7 @@ name: Generate Stats Images
 
 on:
   push:
-    branches: [ feature/5-github-actions ]
+    branches: [ main ]
 
   workflow_dispatch:
 
