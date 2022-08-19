@@ -1,0 +1,62 @@
+name: Generate Stats Images
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "5 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  svg-generation:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out repository under $GITHUB_WORKSPACE, so the job can access it
+      - uses: actions/checkout@v2
+
+      # Run using Python 3.10 for consistency and aiohttp
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+
+      # Cache dependencies. From:
+      # https://github.com/actions/cache/blob/master/examples.md#python---pip
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      # Install dependencies with `pip`
+      - name: Install requirements
+        run: |
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install -r requirements.txt
+          pip install -e .
+
+      - name: create env file
+        run: |
+          touch config/.env
+          cat config/.env.template > config/.env
+
+      # Generate all statistics images
+      - name: Generate images
+        run: |
+          python3 --version
+          python3 app/main.py
+
+      # Commit all changed files to the repository
+      - name: Commit to the repo
+        run: |
+          git config --global user.name "sudiptob2/cf-stats"
+          git config --global user.email "cf-stats[bot]@sudiptob2.github.io"
+          git add .
+          # Force the build to succeed, even if no files were changed
+          git commit -m 'Update generated files' || true
+          git push
