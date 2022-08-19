@@ -11,13 +11,13 @@ class TestCFReqHandler:
         """Tests CFRequestHandler.make_request."""
 
         def fake_get_user_info():
-            return user_info
+            CFRequestHandler.user_info = user_info
 
         def fake_get_user_sub():
-            return user_submission
+            CFRequestHandler.user_submission = user_submission
 
         def fake_rating_changes():
-            return rating_changes
+            CFRequestHandler.rating_changes = rating_changes
 
         mocker.patch.object(CFRequestHandler, '_get_user_info', fake_get_user_info)
         mocker.patch.object(CFRequestHandler, '_get_user_sub', fake_get_user_sub)
