@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  svg-generation:
     runs-on: ubuntu-latest
 
     steps:
