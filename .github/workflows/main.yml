@@ -37,7 +37,7 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip setuptools wheel
           python3 -m pip install -r requirements.txt
-
+          pip install -e .
 
       - name: create env file
         run: |
@@ -47,10 +47,8 @@ jobs:
       # Generate all statistics images
       - name: Generate images
         run: |
-          echo "PYTHONPATH=/home/runner/work/cf-stats" >> $GITHUB_ENV
           python3 --version
-          echo $PYTHONPATH
-          python3 app/main.py
+          python3 -m app/main.py
 
       # Commit all changed files to the repository
       - name: Commit to the repo
