@@ -2,6 +2,8 @@ from datetime import datetime
 
 import dateutil.relativedelta
 
+from app.utils.acronym import Acronym
+
 
 class User:
     """Singleton user model."""
@@ -60,10 +62,16 @@ class User:
         rd = dateutil.relativedelta.relativedelta(datetime.now(), joined_at)
         return int(rd.years)
 
+    @property
+    def org_acronym(self):
+        """Provided acronym of the organization."""
+        acronym_handler = Acronym()
+        return acronym_handler.acronymize(self.organization)
+
     def __str__(self):
         """Returns the string rep of the class."""
 
-        return f"Name: {self.name}\nOrg: {self.organization}\nRating: {self.rating}\n" + \
+        return f"Name: {self.name}\nOrg: {self.org_acronym}\nRating: {self.rating}\n" + \
                f"Rank: {self.rank}\nMax Rating: {self.max_rating}\nMax Rank: {self.max_rank}\n" + \
                f"Contests: {self.contests}\nSubmissions: {self.submissions}\nAC: {self.accepted}\n" + \
                f"WA: {self.wrong_ans}\nTLE: {self.tle}\nContribution: {self.contributions}\nSince: {self.member_since}"
