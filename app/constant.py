@@ -15,11 +15,15 @@ class Constant:
 
     # SVG types
     BADGE = 'badge'
-    STAT = 'stat'
+    CARD = 'card'
 
     # Badge type
     RATING = 'rating'
     MAX_RATING = 'max_rating'
+    LIGHT_CARD = 'ligth_card'
+
+    # Template location
+    TEMPLATE_FOLDER = f'{settings.base_dir}/template'
 
     # Output folder location
     OUTPUT_FOLDER = f'{settings.base_dir}/output'
