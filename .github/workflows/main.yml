@@ -48,7 +48,7 @@ jobs:
       - name: Generate images
         run: |
           echo "PYTHONPATH=/home/runner/work/cf-stats" >> $GITHUB_ENV
-          pipenv shell
+          echo  $VIRTUAL_ENV
           python3 --version
           python3 app/main.py
 
