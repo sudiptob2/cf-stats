@@ -20,7 +20,7 @@ class Constant:
     # Badge type
     RATING = 'rating'
     MAX_RATING = 'max_rating'
-    LIGHT_CARD = 'ligth_card'
+    LIGHT_CARD = 'light_card'
 
     # Template location
     TEMPLATE_FOLDER = f'{settings.base_dir}/template'
