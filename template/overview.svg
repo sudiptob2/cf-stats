@@ -101,7 +101,7 @@
               </tr>
               <tr>
                 <td style="padding-bottom: 15px">
-                  PSTU | Pupil (Max: Specialist) | Since 7 years
+                  PSTU | <span style="color: green">Pupil </span> (max: <span style="color: #03A89E">specialist</span>) | Since 7 years
                 </td>
               </tr>
             </thead>
