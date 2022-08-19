@@ -6,7 +6,7 @@ class Constant:
 
     # website names
     CODEFORCES = 'codeforces'
-    LOGO = f'{settings.base_dir}/assets/cflogo.svg'
+    LOGO = "https://raw.githubusercontent.com/sudiptob2/cf-stats/master/assets/cflogo.svg"
 
     # API endpoints
     USER_INFO = 'https://codeforces.com/api/user.info?handles={0}'
