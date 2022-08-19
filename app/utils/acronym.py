@@ -1,3 +1,4 @@
+from app.constant import Constant
 from config.config import settings
 
 
@@ -20,4 +21,8 @@ class Acronym:
                 acc += word
             else:
                 acc += word[0].upper()
+        # if the acronym is greater than 6 char
+        # we shrink the acronym by taking only the first and last char
+        if len(acc) > Constant.ACC_MAX_LEN:
+            acc = acc[0] + acc[-1]
         return acc
