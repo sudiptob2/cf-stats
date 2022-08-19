@@ -47,8 +47,9 @@ jobs:
       # Generate all statistics images
       - name: Generate images
         run: |
-          echo "PYTHONPATH=/home/runner/work/cf-stats/cf-stats" >> $GITHUB_ENV
+          echo "PYTHONPATH=/home/runner/work/cf-stats" >> $GITHUB_ENV
           python3 --version
+          echo $PYTHONPATH
           python3 app/main.py
 
       # Commit all changed files to the repository
