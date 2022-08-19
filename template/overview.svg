@@ -101,7 +101,7 @@
               </tr>
               <tr>
                 <td style="padding-bottom: 15px">
-                  PSTU | <span style="color: green">{{ rating }} </span> (max: <span style="color: #03A89E">{{ max }}</span>) | Since {{ year }} years
+                  {{ organization }} | <span style="color: green">{{ rating }} </span> (max: <span style="color: #03A89E">{{ max }}</span>) | Since {{ year }} years
                 </td>
               </tr>
             </thead>
