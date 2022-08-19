@@ -47,7 +47,7 @@ jobs:
       # Generate all statistics images
       - name: Generate images
         run: |
-          ls -lah
+          echo "::set-env name=PYTHONPATH::/home/runner/work/cf-stats"
           python3 --version
           python3 app/main.py
 
