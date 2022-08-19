@@ -46,10 +46,10 @@ jobs:
 
       # Generate all statistics images
       - name: Generate images
-        working-directory: app
         run: |
+          ls -lah
           python3 --version
-          python3 main.py
+          python3 app/main.py
 
       # Commit all changed files to the repository
       - name: Commit to the repo
