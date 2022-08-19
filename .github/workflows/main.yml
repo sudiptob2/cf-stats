@@ -36,8 +36,8 @@ jobs:
       - name: Install requirements
         run: |
           python3 -m pip install --upgrade pip setuptools wheel
-          python3 -m pip install pipenv
-          python3 -m pipenv install
+          python3 -m pip install -r requirements.txt
+
 
       - name: create env file
         run: |
@@ -47,8 +47,6 @@ jobs:
       # Generate all statistics images
       - name: Generate images
         run: |
-          echo "PYTHONPATH=/home/runner/work/cf-stats" >> $GITHUB_ENV
-          echo  $VIRTUAL_ENV
           python3 --version
           python3 app/main.py
 
