@@ -128,5 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# ignoring output folder
-output
