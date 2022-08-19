@@ -41,8 +41,8 @@ jobs:
 
       - name: create env file
         run: |
-          touch .env
-          cat .env.template > .env
+          touch config/.env
+          cat config/.env.template > config/.env
 
       # Generate all statistics images
       - name: Generate images
@@ -53,8 +53,8 @@ jobs:
       # Commit all changed files to the repository
       - name: Commit to the repo
         run: |
-          git config --global user.name "jstrieb/github-stats"
-          git config --global user.email "github-stats[bot]@jstrieb.github.io"
+          git config --global user.name "sudiptob2/cf-stats"
+          git config --global user.email "cf-stats[bot]@sudiptob2.github.io"
           git add .
           # Force the build to succeed, even if no files were changed
           git commit -m 'Update generated files' || true
