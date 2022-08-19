@@ -8,8 +8,8 @@ class CFRequestHandler:
     """Provides services for requesting codeforces API."""
 
     user_info: dict = None
-    user_submission: dict = None
-    rating_changes: dict = None
+    user_submission: list = None
+    rating_changes: list = None
 
     @classmethod
     def _get_user_info(cls):
