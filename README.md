@@ -28,6 +28,7 @@
 5. To add your statistics to your GitHub Profile README, copy and paste the
    following lines of code into your markdown content. Change the `your-github-username`
    value to your GitHub username.
+
    ```md
    ![](https://raw.githubusercontent.com/your-github-username/cf-stats/main/output/light_card.svg#gh-dark-mode-only)
    ![](https://raw.githubusercontent.com/your-github-username/cf-stats/main/output/light_card.svg)
