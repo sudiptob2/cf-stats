@@ -1,3 +1,5 @@
+import re
+
 import pybadges
 
 from app.constant import Constant
@@ -12,12 +14,12 @@ class BadgeGenerator(IGenerator, FileHelper):
     def generate(cls, config: Config):
         """Generate svg badge for rating."""
         user = User()
-        badge = pybadges.badge(
-            left_text=Constant.CODEFORCES,
-            logo=Constant.LOGO,
-            right_text=str(getattr(user, config.badge_type)),
-            right_color=str(user.rating_color) if config.badge_type == 'rating' else str(user.max_rating_color)
-        )
-        file_context = FileContext(badge, f"{Constant.OUTPUT_FOLDER}/{config.badge_type}.svg")
+        with open(f'{Constant.TEMPLATE_FOLDER}/rating_template.svg', 'r') as f:
+            output = f.read()
+
+        output = re.sub('{{ codeforces }}', Constant.CODEFORCES, output)
+        output = re.sub('{{ rating }}', str(getattr(user, config.badge_type)), output)
+        output = re.sub('#123456', str(user.rating_color) if config.badge_type == 'rating' else str(user.max_rating_color), output)
+        file_context = FileContext(output, f"{Constant.OUTPUT_FOLDER}/{config.badge_type}.svg")
         cls.save_svg(file_context)
-        return badge
+        return output
