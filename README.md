@@ -19,13 +19,14 @@
    [here](https://github.com/sudiptob2/cf-stats/generate). Note: this is
    **not** the same as forking a copy because it copies everything fresh,
    without the huge commit history.
-3. Go to the [Actions Page](../../actions?query=workflow%3A"Generate+Stats+Images") and press "Run Workflow" on the
+3. Goto [config/.env.template](config/.env.template) and put your codeforces handle in the `CF_HANDLE` key.
+4. Go to the [Actions Page](../../actions?query=workflow%3A"Generate+Stats+Images") and press "Run Workflow" on the
    right side of the screen to generate images for the first time.
     - The images will be automatically regenerated every 24 hours, but they can
       be regenerated manually by running the workflow this way.
-4. Take a look at the images that have been created in the
+5. Take a look at the images that have been created in the
    [`output`](output) folder.
-5. To add your statistics to your GitHub Profile README, copy and paste the
+6. To add your statistics to your GitHub Profile README, copy and paste the
    following lines of code into your markdown content. Change the `your-github-username`
    value to your GitHub username.
 
@@ -37,7 +38,7 @@
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/max_rating.svg)
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/rating.svg)
    ```
-6. [Link](https://github.com/sudiptob2/cf-stats) back to the [original](https://github.com/sudiptob2/cf-stats)
+7. [Link](https://github.com/sudiptob2/cf-stats) back to the [original](https://github.com/sudiptob2/cf-stats)
    repository so that others can generate their own
    statistics images.
 
