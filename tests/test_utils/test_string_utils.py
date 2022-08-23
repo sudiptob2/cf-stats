@@ -1,4 +1,4 @@
-from app.utils.acronym import Acronym
+from app.utils.string_utils import Acronym
 
 
 class TestAcronym:
