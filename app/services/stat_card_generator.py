@@ -24,7 +24,7 @@ class CardGenerator(IGenerator, FileHelper):
         with open(f'{Constant.TEMPLATE_FOLDER}/stat_card.svg', 'r') as f:
             output = f.read()
 
-        output = re.sub('{{ name }}', user.name, output)
+        output = re.sub('{{ name }}', user.sliced_name, output)
         if not user.org_acronym:
             output = re.sub('{{ organization }} \|', user.org_acronym, output)
         else:
