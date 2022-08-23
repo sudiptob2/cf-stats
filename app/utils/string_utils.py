@@ -26,3 +26,18 @@ class Acronym:
         if len(acc) > Constant.ACC_MAX_LEN:
             acc = acc[0] + acc[-1]
         return acc
+
+
+class StringSlicer:
+    """Implements the logic for truncating strings."""
+
+    def __init__(self, max_len=settings.max_name_len):
+        self.max_len = max_len
+
+    def slice(self, string: str) -> str:
+        """Returns string to appropriate size."""
+        if len(string) > self.max_len:
+            string = string.split()[0]
+
+        return string[:self.max_len]
+
