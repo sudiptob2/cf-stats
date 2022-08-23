@@ -1,4 +1,4 @@
-from app.utils.string_utils import Acronym
+from app.utils.string_utils import Acronym, StringSlicer
 
 
 class TestAcronym:
@@ -28,3 +28,24 @@ class TestAcronym:
         actual = acc_handler.acronymize(org_name)
         assert expected == actual
 
+
+class TestStringSlicer:
+    """Tests StringSlicer class."""
+
+    def test_slice_with_short_name(self):
+        """Tests slice with short name string."""
+        full_name = 'Sudipto Baral'
+        expected = 'Sudipto Baral'
+        string_slicer = StringSlicer()
+        actual = string_slicer.slice(full_name)
+
+        assert expected == actual
+
+    def test_slice_with_long_name(self):
+        """Tests slice with long name string."""
+        full_name = 'Shubham kumar Anand'
+        expected = 'Shubham'
+        string_slicer = StringSlicer()
+        actual = string_slicer.slice(full_name)
+
+        assert expected == actual
