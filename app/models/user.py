@@ -2,7 +2,7 @@ from datetime import datetime
 
 import dateutil.relativedelta
 
-from app.utils.acronym import Acronym
+from app.utils.string_utils import Acronym, StringSlicer
 
 
 class User:
@@ -64,9 +64,15 @@ class User:
 
     @property
     def org_acronym(self):
-        """Provided acronym of the organization."""
+        """Provides acronym of the organization."""
         acronym_handler = Acronym()
         return acronym_handler.acronymize(self.organization)
+
+    @property
+    def sliced_name(self):
+        """Provides a sliced name if the full name is too long."""
+        string_handler = StringSlicer()
+        return string_handler.slice(self.name)
 
     def __str__(self):
         """Returns the string rep of the class."""
