@@ -19,12 +19,12 @@
             <rect x="12" width="8" height="24.125" rx="2" fill="#2196F3"/>
         </svg>
         <text x="530.5" y="150" fill="#010101" fill-opacity=".3" transform="scale(0.1)" textLength="601.0"
-              lengthAdjust="spacing">codeforces
+              lengthAdjust="spacing">{{ codeforces }}
         </text>
-        <text x="530.5" y="140" transform="scale(0.1)" textLength="601.0" lengthAdjust="spacing">codeforces</text>
+        <text x="530.5" y="140" transform="scale(0.1)" textLength="601.0" lengthAdjust="spacing">{{ codeforces }}</text>
         <text x="1051.0" y="150" fill="#010101" fill-opacity=".3" transform="scale(0.1)" textLength="280.0"
-              lengthAdjust="spacing">1260
+              lengthAdjust="spacing">{{ rating }}
         </text>
-        <text x="1051.0" y="140" transform="scale(0.1)" textLength="280.0" lengthAdjust="spacing">1260</text>
+        <text x="1051.0" y="140" transform="scale(0.1)" textLength="280.0" lengthAdjust="spacing">{{ rating }}</text>
     </g>
 </svg>
