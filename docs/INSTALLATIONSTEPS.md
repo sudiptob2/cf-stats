@@ -27,7 +27,7 @@
 5. Take a look at the images that have been created in the
    [`output`](../output) folder.
 
-![output images](../assets/7.output folder.png)
+![output images](../assets/7.output-folder.png)
 
 6. To add your statistics to your GitHub Profile README, copy and paste the
    following lines of code into your markdown content. Change the `your-github-username`
