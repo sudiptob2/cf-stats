@@ -12,7 +12,7 @@
 
 # Installation
 
-<!-- TODO: Add details and screenshots -->
+## For step by step screenshot go [here](docs/INSTALLATIONSTEPS.md)
 
 1. Star this repository :pray:
 2. Create a copy of this repository by clicking
