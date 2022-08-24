@@ -1,0 +1,45 @@
+name: Test
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out repository under $GITHUB_WORKSPACE, so the job can access it
+      - uses: actions/checkout@v2
+
+      # Run using Python 3.10 for consistency and aiohttp
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+
+      # Cache dependencies. From:
+      # https://github.com/actions/cache/blob/master/examples.md#python---pip
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      # Install dependencies with `pip`
+      - name: Install requirements
+        run: |
+          python3 -m pip install --upgrade pip setuptools wheel
+          python3 -m pip install -r requirements.txt
+          pip install -e .
+
+      - name: create env file
+        run: |
+          touch config/.env
+          cat config/.env.template > config/.env
+
+      # Run tests
+      - name: Test
+        run: |
+          python3 --version
+          python3 -m pytest 
