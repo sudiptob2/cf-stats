@@ -38,9 +38,6 @@
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/max_rating.svg)
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/rating.svg)
    ```
-7. [Link](https://github.com/sudiptob2/cf-stats) back to the [original](https://github.com/sudiptob2/cf-stats)
-   repository so that others can generate their own
-   statistics images.
 
 # Contribution guideline
 
