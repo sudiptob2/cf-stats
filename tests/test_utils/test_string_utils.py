@@ -49,3 +49,19 @@ class TestStringSlicer:
         actual = string_slicer.slice(full_name)
 
         assert expected == actual
+
+    def test_generate_appropriate_size_string(self):
+        full_name = "MD Abdul Rahman Talukder"
+        expected = "MD Abdul"
+        string_slicer = StringSlicer()
+        actual = string_slicer._StringSlicer__generate_appropriate_size_string(full_name)
+
+        assert expected == actual
+
+    def test_generate_appropriate_size_string_with_long_name(self):
+        full_name = "schwarzenegger"
+        expected = "schwarzenegger"
+        string_slicer = StringSlicer()
+        actual = string_slicer._StringSlicer__generate_appropriate_size_string(full_name)
+
+        assert expected == actual
