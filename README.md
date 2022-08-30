@@ -50,6 +50,7 @@ the [contributing guidelines](docs/CONTRIBUTING.md).
 
 - [Sudipto](https://github.com/sudiptob2)
 - [Nazmul](https://github.com/nazmulweb)
+- [Manish](https://github.com/csemanish12)
 
 ### Inspiration
 This project is heavily inspired by [github-stats](https://github.com/jstrieb/github-stats) project

@@ -51,6 +51,7 @@ class TestStringSlicer:
         assert expected == actual
 
     def test_generate_appropriate_size_string(self):
+        """Tests __generate_appropriate_size_string with name having multiple spaces"""
         full_name = "MD Abdul Rahman Talukder"
         expected = "MD Abdul"
         string_slicer = StringSlicer()
@@ -59,6 +60,7 @@ class TestStringSlicer:
         assert expected == actual
 
     def test_generate_appropriate_size_string_with_long_name(self):
+        """Tests __generate_appropriate_size_string with long name having no spaces"""
         full_name = "schwarzenegger"
         expected = "schwarzenegger"
         string_slicer = StringSlicer()
