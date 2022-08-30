@@ -37,7 +37,19 @@ class StringSlicer:
     def slice(self, string: str) -> str:
         """Returns string to appropriate size."""
         if len(string) > self.max_len:
-            string = string.split()[0]
+            string = self.__generate_appropriate_size_string(string)
 
         return string[:self.max_len]
 
+    def __generate_appropriate_size_string(self, string):
+        """Generates appropriate size string."""
+        tokens = string.split()
+        if len(tokens) == 1:
+            return string
+
+        final_string = ""
+        for token in tokens:
+            if len(token) + len(final_string) < self.max_len:
+                final_string += token + " "
+
+        return final_string.strip()
