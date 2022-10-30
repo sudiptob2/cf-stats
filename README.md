@@ -14,7 +14,7 @@
 
 ### For step-by-step screenshots go [here](docs/INSTALLATIONSTEPS.md) 
 ### Video Demonstration
-  - [Hindi](https://www.youtube.com/watch?v=SMHzbmtHLMo)
+  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc)
 
 1. Star this repository :pray:
 2. Create a copy of this repository by clicking
