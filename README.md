@@ -12,7 +12,9 @@
 
 # Installation
 
-## For step by step screenshot go [here](docs/INSTALLATIONSTEPS.md) 
+### For step-by-step screenshots go [here](docs/INSTALLATIONSTEPS.md) 
+### Video Demonstration
+  - [Hindi](https://www.youtube.com/watch?v=SMHzbmtHLMo)
 
 1. Star this repository :pray:
 2. Create a copy of this repository by clicking
