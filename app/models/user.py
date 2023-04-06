@@ -69,6 +69,18 @@ class User:
         return acronym_handler.acronymize(self.organization)
 
     @property
+    def rank_acronym(self):
+        """Provides acronym of the rank"""
+        acronym_handler = Acronym()
+        return acronym_handler.acronymize(self.rank)
+
+    @property
+    def max_rank_acronym(self):
+        """Provides acronym of the rank"""
+        acronym_handler = Acronym()
+        return acronym_handler.acronymize(self.max_rank)
+
+    @property
     def sliced_name(self):
         """Provides a sliced name if the full name is too long."""
         string_handler = StringSlicer()
