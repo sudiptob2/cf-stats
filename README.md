@@ -14,7 +14,7 @@
 
 ### For step-by-step screenshots go [here](docs/INSTALLATIONSTEPS.md) 
 ### Video Demonstration
-  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc)
+  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc) Contributed by [shubhankarsharma876](https://github.com/shubhankarsharma876)
 
 1. Star this repository :pray:
 2. Create a copy of this repository by clicking
@@ -43,16 +43,9 @@
 
 # Contribution guideline
 
-If you like this project and want to improve by adding features, fixing bugs or anything, please follow
+If you like this project and want to improve by adding features, fixing bugs, or anything, please follow
 the [contributing guidelines](docs/CONTRIBUTING.md).
 
 # Acknowledgments
+SVG design is contributed by [Nazmul Hasan](https://github.com/nazmulweb)
 
-### Contributors List
-
-- [Sudipto](https://github.com/sudiptob2)
-- [Nazmul](https://github.com/nazmulweb)
-- [Manish](https://github.com/csemanish12)
-
-### Inspiration
-This project is heavily inspired by [github-stats](https://github.com/jstrieb/github-stats) project
