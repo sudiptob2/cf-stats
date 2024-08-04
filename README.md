@@ -13,8 +13,6 @@
 # Installation
 
 ### For step-by-step screenshots go [here](docs/INSTALLATIONSTEPS.md) 
-### Video Demonstration
-  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc) Contributed by [shubhankarsharma876](https://github.com/shubhankarsharma876)
 
 1. Star this repository :pray:
 2. Create a copy of this repository by clicking
@@ -40,7 +38,9 @@
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/max_rating.svg)
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/rating.svg)
    ```
-
+### Video Demonstration
+  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc) Contributed by [shubhankarsharma876](https://github.com/shubhankarsharma876)
+    
 # Contribution guideline
 
 If you like this project and want to improve by adding features, fixing bugs, or anything, please follow
