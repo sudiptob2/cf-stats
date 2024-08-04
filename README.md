@@ -39,7 +39,7 @@
    ![](https://raw.githubusercontent.com/sudiptob2/cf-stats/main/output/rating.svg)
    ```
 ### Video Demonstration
-  - [Hindi](https://www.youtube.com/watch?v=lPASqH0ZoIc) Contributed by [shubhankarsharma876](https://github.com/shubhankarsharma876)
+  - [(हिन्दी)](https://www.youtube.com/watch?v=lPASqH0ZoIc)  Contributed by [shubhankarsharma876](https://github.com/shubhankarsharma876)
     
 # Contribution guideline
 
