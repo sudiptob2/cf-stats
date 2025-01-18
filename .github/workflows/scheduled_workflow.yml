@@ -1,0 +1,17 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+    # Run every day at 2:00 AM UTC
+    - cron: '0 2 * * *'
+
+jobs:
+  run-scheduled-task:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run script
+        run: echo "Hello, this is a scheduled task!"
