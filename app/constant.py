@@ -30,3 +30,6 @@ class Constant:
 
     # Acronym MAX lenght
     ACC_MAX_LEN = 6
+
+    # Rating MAX Length
+    ACC_RATING_MAX_LEN = 18
