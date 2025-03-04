@@ -5,11 +5,11 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       # Check out repository under $GITHUB_WORKSPACE, so the job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Run using Python 3.10 for consistency and aiohttp
       - name: Set up Python 3.10

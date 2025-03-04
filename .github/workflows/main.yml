@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   svg-generation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       # Check out repository under $GITHUB_WORKSPACE, so the job can access it
@@ -27,7 +27,7 @@ jobs:
 
       # Cache dependencies. From:
       # https://github.com/actions/cache/blob/master/examples.md#python---pip
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
