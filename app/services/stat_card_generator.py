@@ -29,9 +29,18 @@ class CardGenerator(IGenerator, FileHelper):
             output = re.sub('{{ organization }} \|', user.org_acronym, output)
         else:
             output = re.sub('{{ organization }}', user.org_acronym, output)
-        output = re.sub('{{ rating }}', user.rank, output)
+
+        if len(user.rank) > Constant.ACC_RATING_MAX_LEN:
+            output = re.sub('{{ rating }}', user.rank_acronym, output)
+        else:
+            output = re.sub('{{ rating }}', user.rank, output)
+
+        if len(user.rank) > Constant.ACC_RATING_MAX_LEN:
+            output = re.sub('{{ max }}', user.max_rank_acronym, output)
+        else:
+            output = re.sub('{{ max }}', user.max_rank, output)
+
         output = re.sub('green', user.rating_color, output)
-        output = re.sub('{{ max }}', user.max_rank, output)
         output = re.sub('#03A89E', user.max_rating_color, output)
         output = re.sub('{{ year }}', str(user.member_since), output)
         output = re.sub('{{ contest_rating }}', str(user.rating), output)
